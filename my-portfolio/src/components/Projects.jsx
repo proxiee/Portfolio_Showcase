@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { FaArrowLeft, FaArrowRight, FaGithub } from 'react-icons/fa6';
 import { AnimatePresence, motion } from 'framer-motion';
-import { FiExternalLink } from "react-icons/fi";
 
 const ActionButton = ({ href, children, icon }) => (
     <a
@@ -21,7 +20,7 @@ const ProjectsPage = () => {
             title: "Resume Automation",
             description: "An intelligent résumé tailoring tool that analyzes job descriptions and dynamically generates customized résumés by prioritizing relevant skills, experiences, and keywords.",
             tech: ["React", "Node.js", "MongoDB"],
-            image: "project_pics//create an image for .png",
+            image: process.env.PUBLIC_URL + "/project_pics/create an image for .png",
             sourceCodeUrl: "https://github.com/proxiee/RESUME_CREATION.git",
             liveLinkUrl: "#",
         },
@@ -29,7 +28,7 @@ const ProjectsPage = () => {
             title: "3D Portfolio",
             description: "This is a 3D portfolio website that showcases projects in an interactive 3D environment, allowing users to navigate through a virtual gallery of work.",
             tech: ["Three.js", "React", "Framer Motion"],
-            image: "project_pics//Screenshot 2025-06-14 233950.png",
+            image: process.env.PUBLIC_URL + "/project_pics/Screenshot 2025-06-14 233950.png",
             sourceCodeUrl: "https://github.com",
             liveLinkUrl: "#",
         },
@@ -37,7 +36,7 @@ const ProjectsPage = () => {
             title: "Data Dashboard",
             description: "A dashboard for visualizing complex datasets, featuring real-time updates and reports.",
             tech: ["Python", "Flask", "D3.js"],
-            image: "project_pics//What-Is-AI-Text-to-Speech-and-How-Does-It-Work-.jpeg",
+            image: process.env.PUBLIC_URL + "/project_pics/What-Is-AI-Text-to-Speech-and-How-Does-It-Work-.jpeg",
             sourceCodeUrl: "https://github.com",
             liveLinkUrl: "#",
         },
