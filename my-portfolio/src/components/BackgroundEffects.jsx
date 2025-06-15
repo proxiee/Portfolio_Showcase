@@ -9,6 +9,8 @@ const TesseractObject = () => {
     const { theme } = useTheme();
     const color = theme === 'dark' ? '#FFFFFF' : '#DCDCDC';
     const opacityValue = theme === 'dark' ? 0.5 : 0.1; // ✨ More transparent in light mode
+    const materialRef1 = useRef();
+    const materialRef2 = useRef();
 
     const groupRef = useRef();
     const { mouse } = useThree();
@@ -24,6 +26,17 @@ const TesseractObject = () => {
             groupRef.current.rotation.y += rotationSpeed.current.y * 0.01;
         }
     });
+
+    useEffect(() => {
+        if (materialRef1.current) {
+            materialRef1.current.color.set(color);
+            materialRef1.current.opacity = opacityValue;
+        }
+        if (materialRef2.current) {
+            materialRef2.current.color.set(color);
+            materialRef2.current.opacity = opacityValue;
+        }
+    }, [color, opacityValue]);
 
     return (
         <group ref={groupRef}>
@@ -45,6 +58,7 @@ const Particles = ({ count = 2000 }) => {
     // 1. Get the current theme and set the color for the particles.
     const { theme } = useTheme();
     const color = theme === 'dark' ? '#FFFFFF' : '#000000';
+    const materialRef = useRef();
 
     const pointsRef = useRef();
     const { viewport, mouse } = useThree();
@@ -108,6 +122,10 @@ const Particles = ({ count = 2000 }) => {
         }
         return pos;
     }, [particles, count]);
+
+    useEffect(() => {
+        if (materialRef.current) {
+            materialRef.current.color.set(color);
 
     return (
         <points ref={pointsRef}>
