@@ -43,11 +43,11 @@ const TesseractObject = () => {
             <mesh>
                 <boxGeometry args={[6.5, 6.5, 6.5]} />
                 {/* 2. Apply the dynamic color to the materials. */}
-                <meshStandardMaterial color={color} wireframe opacity={opacityValue} transparent />
+                <meshStandardMaterial ref={materialRef1} color={color} wireframe opacity={opacityValue} transparent />
             </mesh>
             <mesh>
                 <boxGeometry args={[3, 3, 3]} />
-                <meshStandardMaterial color={color} wireframe opacity={opacityValue} transparent />
+                <meshStandardMaterial ref={materailRef2} color={color} wireframe opacity={opacityValue} transparent />
             </mesh>
         </group>
     );
@@ -126,6 +126,8 @@ const Particles = ({ count = 2000 }) => {
     useEffect(() => {
         if (materialRef.current) {
             materialRef.current.color.set(color);
+            }
+}, [color]);
 
     return (
         <points ref={pointsRef}>
@@ -138,7 +140,7 @@ const Particles = ({ count = 2000 }) => {
                 />
             </bufferGeometry>
             {/* 2. Apply the dynamic color to the particle material. */}
-            <pointsMaterial size={0.02} color={color} sizeAttenuation={true} />
+            <pointsMaterial ref={materialRef} size={0.02} color={color} sizeAttenuation={true} />
         </points>
     );
 };
