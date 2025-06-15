@@ -1,14 +1,13 @@
-import React, { useMemo, useRef } from 'react';
+import React, { useMemo, useRef, useEffect } from 'react';
 import * as THREE from 'three';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { useTheme } from '../context/ThemeContext';
 
 // Tesseract Component
 const TesseractObject = () => {
-    // 1. Get the current theme and set the color dynamically.
     const { theme } = useTheme();
     const color = theme === 'dark' ? '#FFFFFF' : '#DCDCDC';
-    const opacityValue = theme === 'dark' ? 0.5 : 0.1; // ✨ More transparent in light mode
+    const opacityValue = theme === 'dark' ? 0.5 : 0.1;
     const materialRef1 = useRef();
     const materialRef2 = useRef();
 
@@ -42,12 +41,11 @@ const TesseractObject = () => {
         <group ref={groupRef}>
             <mesh>
                 <boxGeometry args={[6.5, 6.5, 6.5]} />
-                {/* 2. Apply the dynamic color to the materials. */}
-                <meshStandardMaterial ref={materialRef1} color={color} wireframe opacity={opacityValue} transparent />
+                <meshStandardMaterial ref={materialRef1} wireframe transparent />
             </mesh>
             <mesh>
                 <boxGeometry args={[3, 3, 3]} />
-                <meshStandardMaterial ref={materailRef2} color={color} wireframe opacity={opacityValue} transparent />
+                <meshStandardMaterial ref={materialRef2} wireframe transparent />
             </mesh>
         </group>
     );
@@ -55,7 +53,6 @@ const TesseractObject = () => {
 
 // Particles Component
 const Particles = ({ count = 2000 }) => {
-    // 1. Get the current theme and set the color for the particles.
     const { theme } = useTheme();
     const color = theme === 'dark' ? '#FFFFFF' : '#000000';
     const materialRef = useRef();
@@ -126,8 +123,8 @@ const Particles = ({ count = 2000 }) => {
     useEffect(() => {
         if (materialRef.current) {
             materialRef.current.color.set(color);
-            }
-}, [color]);
+        }
+    }, [color]);
 
     return (
         <points ref={pointsRef}>
@@ -139,8 +136,7 @@ const Particles = ({ count = 2000 }) => {
                     itemSize={3}
                 />
             </bufferGeometry>
-            {/* 2. Apply the dynamic color to the particle material. */}
-            <pointsMaterial ref={materialRef} size={0.02} color={color} sizeAttenuation={true} />
+            <pointsMaterial ref={materialRef} size={0.02} sizeAttenuation={true} />
         </points>
     );
 };
