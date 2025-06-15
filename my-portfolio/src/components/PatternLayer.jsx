@@ -4,8 +4,12 @@ import React from 'react';
 
 // The pattern and rotation definitions remain the same.
 const svgPatterns = [
-    "/patterns/pattern-20.svg", "/patterns/pattern-22.svg", "/patterns/pattern-24.svg",
-    "/patterns/pattern-21.svg", "/patterns/pattern-23.svg", "/patterns/pattern-25.svg",
+    process.env.PUBLIC_URL + "/patterns/pattern-20.svg",
+    process.env.PUBLIC_URL + "/patterns/pattern-22.svg",
+    process.env.PUBLIC_URL + "/patterns/pattern-24.svg",
+    process.env.PUBLIC_URL + "/patterns/pattern-21.svg",
+    process.env.PUBLIC_URL + "/patterns/pattern-23.svg",
+    process.env.PUBLIC_URL + "/patterns/pattern-25.svg",
 ];
 const fixedRotations = [15, -10, 30, -25, 5, -35];
 
