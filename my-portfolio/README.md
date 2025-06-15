@@ -68,3 +68,77 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Deployment to GitHub Pages
+
+This project is configured for deployment to GitHub Pages.
+
+### Prerequisites
+
+1.  **Update `package.json`**:
+    Open `my-portfolio/package.json`. Find the `homepage` field and replace the placeholder values with your GitHub username and the name of this repository. It should look like this:
+    `"homepage": "https://<your-username>.github.io/<your-repo-name>/"`
+
+2.  **GitHub Repository**:
+    Ensure you have created a GitHub repository for this project and that your local `my-portfolio` directory is a git repository with the GitHub repository set as a remote.
+    If you haven't initialized your local repository or added a remote, you can typically do so with:
+    ```bash
+    # Navigate to your project directory if you aren't already there
+    # cd my-portfolio
+
+    # Initialize git (if not already done)
+    # git init
+
+    # Add your GitHub repository as a remote
+    # git remote add origin https://github.com/<your-username>/<your-repo-name>.git
+    ```
+
+### Deployment Steps
+
+This project uses the `gh-pages` package to simplify deployment.
+
+1.  **Install `gh-pages`**:
+    If you don't have it installed as a dev dependency, you can add it by running:
+    ```bash
+    npm install --save-dev gh-pages
+    ```
+    Or if you use yarn:
+    ```bash
+    yarn add --dev gh-pages
+    ```
+
+2.  **Add Deploy Script to `package.json`**:
+    Open `my-portfolio/package.json` and add the following scripts to your `scripts` section:
+    ```json
+    "scripts": {
+      // ... your existing scripts (start, build, test, eject)
+      "predeploy": "npm run build",
+      "deploy": "gh-pages -d build"
+    }
+    ```
+    The `predeploy` script ensures your application is built before deployment. The `deploy` script will push the contents of your `build` directory to a branch named `gh-pages`.
+
+3.  **Deploy**:
+    Run the deploy script:
+    ```bash
+    npm run deploy
+    ```
+    Or if you use yarn:
+    ```bash
+    yarn deploy
+    ```
+    This command will create a `gh-pages` branch (if it doesn't exist), push your `build` directory's contents to it, and then GitHub Pages will serve your site from this branch.
+
+4.  **Configure GitHub Pages in Repository Settings**:
+    - Go to your repository on GitHub.
+    - Click on the "Settings" tab.
+    - Navigate to the "Pages" section in the left sidebar.
+    - Under "Build and deployment", for "Source", select "Deploy from a branch".
+    - Under "Branch", select `gh-pages` as the source branch and `/ (root)` as the folder.
+    - Click "Save".
+
+    It might take a few minutes for your site to be live at the URL specified in your `homepage` field.
+
+### Note on `build` folder
+The `gh-pages` deployment method handles the `build` folder by pushing its contents to a separate `gh-pages` branch. You typically should keep the `build` folder in your `.gitignore` file on your main development branch (e.g., `main` or `master`) to avoid committing build artifacts directly to it. The `gh-pages` package takes care of what needs to be on the deployment branch.
+```
