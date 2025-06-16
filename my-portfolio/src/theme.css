@@ -1,0 +1,17 @@
+/* src/theme.css */
+
+/* This file provides high-specificity base styles to override the browser's
+  default theme and ensure our manual toggle always wins.
+*/
+
+html.light,
+html.light body {
+  background-color: #f3f4f6; /* This is Tailwind's gray-100 */
+  color: #000000; /* This is black */
+}
+
+html.dark,
+html.dark body {
+  background-color: #000000; /* This is black */
+  color: #ffffff; /* This is white */
+}
