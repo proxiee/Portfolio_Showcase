@@ -4,8 +4,8 @@ import React from 'react';
 
 // The pattern and rotation definitions remain the same.
 const svgPatterns = [
-    "/patterns/pattern-20.svg", "/patterns/pattern-22.svg", "/patterns/pattern-24.svg",
-    "/patterns/pattern-21.svg", "/patterns/pattern-23.svg", "/patterns/pattern-25.svg",
+    "/patterns/pattern-26.svg", "/patterns/pattern-27.svg", "/patterns/pattern-28.svg",
+    "/patterns/pattern-29.svg", "/patterns/pattern-30.svg", "/patterns/pattern-31.svg",
 ];
 const fixedRotations = [15, -10, 30, -25, 5, -35];
 
@@ -28,7 +28,7 @@ const PatternLayer = ({ stairIndex }) => {
                                 height: '50%',
                                 backgroundImage: `url(${svgSrc})`,
                                 transform: `rotate(${rotation}deg)`,
-                                color: 'var(--theme-svg-pattern-color)', // Add this line
+                                // color: 'var(--theme-svg-pattern-color)', // Add this line
                             }}
                         />
                     </div>
