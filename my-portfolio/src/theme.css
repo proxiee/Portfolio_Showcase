@@ -8,7 +8,7 @@ html.light {
   --theme-bg: #FAFBFD;
   --theme-text-primary: #1A202C;
   --theme-text-secondary: #4A5568;
-  --theme-accent: #2563EB;
+  --theme-accent: #ffffff;
   --theme-svg-pattern-color: #2D3748;
   --theme-tesseract-color: #A0AEC0;
   --theme-particles-color: #1A202C;
@@ -22,7 +22,7 @@ html.dark {
   --theme-bg: #000000; /* This is black */
   --theme-text-primary: #ffffff; /* This is white */
   --theme-text-secondary: #A0AEC0; /* Example: A lighter gray for dark mode secondary text */
-  --theme-accent: #60A5FA; /* Example: A lighter blue for dark mode accent */
+  --theme-accent: #ffffff; /* Example: A lighter blue for dark mode accent */
   --theme-svg-pattern-color: #A0AEC0; /* Example: Lighter color for SVGs in dark mode */
   --theme-tesseract-color: #FFFFFF;
   --theme-particles-color: #FFFFFF;

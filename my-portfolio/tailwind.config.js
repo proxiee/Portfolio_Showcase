@@ -22,15 +22,15 @@ module.exports = {
         'light-bg': '#FAFBFD',
         'light-text-primary': '#1A202C',
         'light-text-secondary': '#4A5568',
-        'light-accent': '#2563EB',
+        'light-accent': '#000000',
         'light-svg-pattern': '#2D3748',
-        'light-tesseract': '#A0AEC0',
-        'light-particles': '#1A202C',
+        'light-tesseract': '#C5C5C5',
+        'light-particles': '#000000',
         // It's good practice to define dark theme colors here too for consistency
         'dark-bg': '#000000',
         'dark-text-primary': '#FFFFFF',
         'dark-text-secondary': '#A0AEC0', // Consistent with CSS var
-        'dark-accent': '#60A5FA', // Consistent with CSS var
+        'dark-accent': '#FFFFFF', // Consistent with CSS var
         'dark-svg-pattern': '#A0AEC0', // Consistent with CSS var
         'dark-tesseract': '#FFFFFF',
         'dark-particles': '#FFFFFF',
