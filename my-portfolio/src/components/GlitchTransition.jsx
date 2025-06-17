@@ -1,9 +1,11 @@
 // src/components/GlitchTransition.jsx
 
 import { motion } from 'framer-motion';
+import { useTheme } from '../context/ThemeContext'; // Import useTheme
 
 // This component will create our glitchy, blocky transition effect.
 const GlitchTransition = () => {
+    const { theme } = useTheme(); // Get the current theme
 
     // --- Configuration ---
     // You can easily tweak these values to change the look and feel.
@@ -11,7 +13,8 @@ const GlitchTransition = () => {
         rows: 10,
         cols: 10,
     };
-    const blockColor = "#080808"; // A very dark gray, almost black, for a cold, spacey feel.
+    // Updated blockColor to use CSS variables via theme
+    const blockColor = getComputedStyle(document.documentElement).getPropertyValue('--theme-glitch-block').trim();
     const animationDuration = 0.4; // How long each block takes to animate.
     const maxDelay = 0.8; // The maximum random delay, creating the scramble effect.
 
@@ -42,6 +45,14 @@ const GlitchTransition = () => {
         }
     };
 
+    // We need a useEffect to update blockColor when the theme changes,
+    // because getComputedStyle won't re-evaluate automatically on theme change.
+    // However, for this specific transition, it usually runs once and then it's done.
+    // If the transition could be re-triggered while the app is live AND the theme could change
+    // during that time, then a useEffect would be more critical.
+    // For simplicity and typical usage of such a transition, direct usage is often fine.
+    // If issues arise, a state variable for blockColor updated by useEffect would be the fix.
+
     return (
         // The main container for the grid. It's fixed to cover the entire screen.
         <div
@@ -56,7 +67,7 @@ const GlitchTransition = () => {
                 <motion.div
                     key={index}
                     className="w-full h-full"
-                    style={{ backgroundColor: blockColor }}
+                    style={{ backgroundColor: blockColor }} // blockColor is now theme-dependent
                     variants={blockVariants}
                     initial="initial"
                     animate="animate"

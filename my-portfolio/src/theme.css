@@ -4,14 +4,47 @@
   default theme and ensure our manual toggle always wins.
 */
 
+html.light {
+  --theme-bg: #FAFBFD;
+  --theme-text-primary: #1A202C;
+  --theme-text-secondary: #4A5568;
+  --theme-accent: #2563EB;
+  --theme-svg-pattern-color: #2D3748;
+  --theme-tesseract-color: #A0AEC0;
+  --theme-particles-color: #1A202C;
+  --theme-card-bg: rgba(255, 255, 255, 0.8);
+  --theme-transition-bg: var(--theme-bg);
+  --theme-glitch-block: var(--theme-text-primary);
+  /* Add other light theme variables here */
+}
+
+html.dark {
+  --theme-bg: #000000; /* This is black */
+  --theme-text-primary: #ffffff; /* This is white */
+  --theme-text-secondary: #A0AEC0; /* Example: A lighter gray for dark mode secondary text */
+  --theme-accent: #60A5FA; /* Example: A lighter blue for dark mode accent */
+  --theme-svg-pattern-color: #A0AEC0; /* Example: Lighter color for SVGs in dark mode */
+  --theme-tesseract-color: #FFFFFF;
+  --theme-particles-color: #FFFFFF;
+  --theme-card-bg: rgba(20, 20, 20, 0.7);
+  --theme-transition-bg: var(--theme-bg);
+  --theme-glitch-block: var(--theme-bg);
+  /* Add other dark theme variables here, ensure they are defined */
+}
+
 html.light,
 html.light body {
-  background-color: #f3f4f6; /* This is Tailwind's gray-100 */
-  color: #000000; /* This is black */
+  background-color: var(--theme-bg);
+  color: var(--theme-text-primary);
 }
 
 html.dark,
 html.dark body {
-  background-color: #000000; /* This is black */
-  color: #ffffff; /* This is white */
+  background-color: var(--theme-bg);
+  color: var(--theme-text-primary);
+}
+
+/* Consider adding a generic class for accent text if not handled by components */
+.text-accent {
+  color: var(--theme-accent);
 }

@@ -35,8 +35,8 @@ const AppContent = () => {
             className={({ isActive }) =>
                 `w-full text-left p-4 text-lg font-semibold transition-colors duration-500 ${
                     isActive
-                        ? 'text-black dark:text-white'
-                        : 'text-gray-500 hover:text-black dark:hover:text-white'
+                        ? 'text-light-accent dark:text-dark-accent'
+                        : 'text-light-text-secondary hover:text-light-accent dark:hover:text-dark-accent'
                 }`
             }
         >
@@ -46,14 +46,14 @@ const AppContent = () => {
 
     return (
         // This main div has theme-aware background and text colors
-        <div className="bg-gray-100 text-black dark:bg-black dark:text-white transition-colors duration-1000 min-h-screen font-sans flex flex-col md:flex-row">
+        <div className="bg-light-bg text-light-text-primary dark:bg-dark-bg dark:text-dark-text-primary transition-colors duration-1000 min-h-screen font-sans flex flex-col md:flex-row">
             <BackgroundEffects />
             <AnimatePresence mode="wait">
                 <StairTransition key={location.pathname} />
             </AnimatePresence>
 
             {/* Header for mobile */}
-            <header className="md:hidden flex justify-between items-center p-4 relative z-30 border-b border-black/10 dark:border-white/10">
+            <header className="md:hidden flex justify-between items-center p-4 relative z-30 border-b border-light-text-primary/10 dark:border-dark-text-primary/10">
                 <button onClick={toggleTheme} className="text-2xl font-bold" aria-label="Toggle theme">
                     <h1>☻</h1>
                 </button>
@@ -65,7 +65,7 @@ const AppContent = () => {
             </header>
 
             {/* Sidebar for desktop */}
-            <aside className="hidden md:flex flex-col w-64 p-8 relative z-20 border-r border-black/10 dark:border-white/10 transition-colors duration-1000">
+            <aside className="hidden md:flex flex-col w-64 p-8 relative z-20 border-r border-light-text-primary/10 dark:border-dark-text-primary/10 transition-colors duration-1000">
                 <button onClick={toggleTheme} className="text-2xl font-bold mb-12 text-left" aria-label="Toggle theme">
                     <h1>☻</h1>
                 </button>
@@ -84,7 +84,7 @@ const AppContent = () => {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        className="md:hidden absolute top-0 left-0 w-full h-full bg-gray-100 dark:bg-black z-20"
+                        className="md:hidden absolute top-0 left-0 w-full h-full bg-light-bg dark:bg-dark-bg z-20"
                     >
                         <nav className="flex flex-col items-center justify-center h-full space-y-4 pt-16">
                             <NavLink to="/">Home</NavLink>

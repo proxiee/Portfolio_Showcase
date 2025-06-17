@@ -6,8 +6,8 @@ import { useTheme } from '../context/ThemeContext';
 // Tesseract Component
 const TesseractObject = () => {
     const { theme } = useTheme();
-    const color = theme === 'dark' ? '#FFFFFF' : '#DCDCDC';
-    const opacityValue = theme === 'dark' ? 0.5 : 0.1;
+    // const color = theme === 'dark' ? '#FFFFFF' : '#DCDCDC'; // To be replaced by CSS variable
+    // const opacityValue = theme === 'dark' ? 0.5 : 0.1; // To be updated and moved
     const materialRef1 = useRef();
     const materialRef2 = useRef();
 
@@ -27,15 +27,19 @@ const TesseractObject = () => {
     });
 
     useEffect(() => {
+        const rootStyle = getComputedStyle(document.documentElement);
+        const tesseractColorValue = rootStyle.getPropertyValue('--theme-tesseract-color').trim();
+        const newOpacity = theme === 'dark' ? 0.5 : 0.6; // Updated light theme opacity
+
         if (materialRef1.current) {
-            materialRef1.current.color.set(color);
-            materialRef1.current.opacity = opacityValue;
+            materialRef1.current.color.set(tesseractColorValue);
+            materialRef1.current.opacity = newOpacity;
         }
         if (materialRef2.current) {
-            materialRef2.current.color.set(color);
-            materialRef2.current.opacity = opacityValue;
+            materialRef2.current.color.set(tesseractColorValue);
+            materialRef2.current.opacity = newOpacity;
         }
-    }, [color, opacityValue]);
+    }, [theme]); // Re-run when theme changes
 
     return (
         <group ref={groupRef}>
@@ -54,7 +58,7 @@ const TesseractObject = () => {
 // Particles Component
 const Particles = ({ count = 2000 }) => {
     const { theme } = useTheme();
-    const color = theme === 'dark' ? '#FFFFFF' : '#000000';
+    // const color = theme === 'dark' ? '#FFFFFF' : '#000000'; // To be replaced by CSS variable
     const materialRef = useRef();
 
     const pointsRef = useRef();
@@ -121,10 +125,13 @@ const Particles = ({ count = 2000 }) => {
     }, [particles, count]);
 
     useEffect(() => {
+        const rootStyle = getComputedStyle(document.documentElement);
+        const particlesColorValue = rootStyle.getPropertyValue('--theme-particles-color').trim();
+
         if (materialRef.current) {
-            materialRef.current.color.set(color);
+            materialRef.current.color.set(particlesColorValue);
         }
-    }, [color]);
+    }, [theme]); // Re-run when theme changes
 
     return (
         <points ref={pointsRef}>

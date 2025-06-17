@@ -11,7 +11,7 @@ const ThemeToggle = () => {
     return (
         <button
             onClick={toggleTheme}
-            className="p-3 rounded-full bg-white/10 border border-white/20 hover:bg-white/20 dark:bg-black/10 dark:border-black/20 dark:hover:bg-black/20 transition-colors duration-500"
+            className="p-3 rounded-full bg-light-text-primary/5 border border-light-text-primary/10 hover:bg-light-text-primary/10 dark:bg-dark-text-primary/5 dark:border-dark-text-primary/10 dark:hover:bg-dark-text-primary/10 transition-colors duration-500"
             aria-label="Toggle theme"
         >
             <AnimatePresence mode="wait" initial={false}>
@@ -22,7 +22,7 @@ const ThemeToggle = () => {
                     exit={{ y: 20, opacity: 0 }}
                     transition={{ duration: 0.2 }}
                 >
-                    {theme === 'dark' ? <FaSun className="text-white"/> : <FaMoon className="text-black"/>}
+                    {theme === 'dark' ? <FaSun className="text-dark-text-primary"/> : <FaMoon className="text-light-text-primary"/>}
                 </motion.div>
             </AnimatePresence>
         </button>

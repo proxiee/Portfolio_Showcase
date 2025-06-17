@@ -31,7 +31,7 @@ const CircleTransition = () => {
   return (
     // The transition layer itself. It's a fixed div that will sit on top of everything (z-50).
     <motion.div
-        className="h-screen w-screen fixed top-0 left-0 bg-neutral-900 pointer-events-none z-50"
+        className="h-screen w-screen fixed top-0 left-0 bg-light-transition-bg dark:bg-dark-transition-bg pointer-events-none z-50"
         variants={circleVariants}
         initial="initial"
         animate="animate"

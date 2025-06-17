@@ -28,6 +28,7 @@ const PatternLayer = ({ stairIndex }) => {
                                 height: '50%',
                                 backgroundImage: `url(${svgSrc})`,
                                 transform: `rotate(${rotation}deg)`,
+                                color: 'var(--theme-svg-pattern-color)', // Add this line
                             }}
                         />
                     </div>
