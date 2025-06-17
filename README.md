@@ -25,4 +25,4 @@ This project is configured for deployment to GitHub Pages.
 ## Live Application
 
 Once deployed and configured, the application will be available at:
-[https://proxiee.github.io/Portfolio_Showcase/](https://proxiee.github.io/Portfolio_Showcase/)
+[https://proxiee.github.io/Portfolio_Showcase/](https://yashwanth99.netlify.app/)
