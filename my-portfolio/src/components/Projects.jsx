@@ -18,6 +18,14 @@ const ActionButton = ({ href, children, icon }) => (
 const ProjectsPage = () => {
     const projects = [
         {
+            title: "Modular Stripe Payment Integration",
+            description: "A modular payment integration system that allows developers to easily implement Stripe payments in their applications with minimal configuration.",
+            tech: ["Node.js"],
+            image: "https://incorpuk.com/blog/content/images/size/w2000/2022/05/Stripe-image-1.png",
+            sourceCodeUrl: "https://github.com/proxiee/modular_payments_processing.git",
+            liveLinkUrl: "#",
+        },
+        {
             title: "Resume Automation",
             description: "An intelligent résumé tailoring tool that analyzes job descriptions and dynamically generates customized résumés by prioritizing relevant skills, experiences, and keywords.",
             tech: ["React", "Node.js", "MongoDB"],
