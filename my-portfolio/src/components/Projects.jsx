@@ -8,7 +8,7 @@ const ActionButton = ({ href, children, icon }) => (
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center justify-center gap-2 w-full px-6 py-3 font-semibold text-black dark:text-white bg-black/5 dark:bg-white/10 border-2 border-black/10 dark:border-white/20 rounded-lg hover:bg-black/10 dark:hover:bg-white/20 transition-all duration-500"
+        className="flex items-center justify-center gap-2 w-full px-6 py-3 font-semibold text-light-text-primary dark:text-dark-text-primary bg-light-text-primary/5 dark:bg-dark-text-primary/10 border-2 border-light-text-primary/10 dark:border-dark-text-primary/20 rounded-lg hover:bg-light-text-primary/10 dark:hover:bg-dark-text-primary/20 transition-all duration-500"
     >
         {icon}
         {children}
@@ -112,7 +112,7 @@ const ProjectsPage = () => {
                                 onDragEnd={handleDragEnd}
                                 dragElastic={0.1}
                             >
-                                <div className="w-full h-full flex flex-col relative bg-white/60 dark:bg-black/40 backdrop-blur-sm border border-black/10 dark:border-white/20 rounded-2xl shadow-2xl overflow-hidden transition-colors duration-1000">
+                                <div className="w-full h-full flex flex-col relative bg-light-card-bg dark:bg-dark-card-bg backdrop-blur-sm border border-light-text-primary/10 dark:border-dark-text-primary/20 rounded-2xl shadow-2xl overflow-hidden transition-colors duration-1000">
                                     {/* ✨ The card content is now fully restored inside this div ✨ */}
                                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.1),_transparent_35%)] pointer-events-none" />
                                     <div className="w-full h-1/2 overflow-hidden">
@@ -122,10 +122,10 @@ const ProjectsPage = () => {
                                         <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
                                         <div className="flex flex-wrap gap-2 mb-4">
                                             {project.tech.map((tech) => (
-                                                <span key={tech} className="bg-black/5 dark:bg-white/10 text-xs px-2 py-1 rounded-full transition-colors duration-1000">{tech}</span>
+                                                <span key={tech} className="bg-light-text-primary/5 dark:bg-dark-text-primary/10 text-xs px-2 py-1 rounded-full transition-colors duration-1000">{tech}</span>
                                             ))}
                                         </div>
-                                        <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 flex-grow transition-colors duration-1000">{project.description}</p>
+                                        <p className="text-light-text-secondary dark:text-dark-text-secondary text-sm mb-4 flex-grow transition-colors duration-1000">{project.description}</p>
                                         <div className="flex gap-4 mt-auto">
                                             <ActionButton href={project.sourceCodeUrl} icon={<FaGithub />}>Source</ActionButton>
                                             {/* <ActionButton href={project.liveLinkUrl} icon={<FiExternalLink />}>Live</ActionButton> */}
@@ -139,13 +139,13 @@ const ProjectsPage = () => {
             </div>
             
             <div className="flex items-center gap-8 mt-8">
-                <button onClick={handlePrevious} className="p-3 rounded-full bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/20 hover:bg-black/10 dark:hover:bg-white/20 transition-colors duration-500">
+                <button onClick={handlePrevious} className="p-3 rounded-full bg-light-text-primary/5 dark:bg-dark-text-primary/10 border border-light-text-primary/10 dark:border-dark-text-primary/20 hover:bg-light-text-primary/10 dark:hover:bg-dark-text-primary/20 transition-colors duration-500">
                     <FaArrowLeft />
                 </button>
                 <div className="text-lg font-mono">
                     {String(currentIndex + 1).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}
                 </div>
-                <button onClick={handleNext} className="p-3 rounded-full bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/20 hover:bg-black/10 dark:hover:bg-white/20 transition-colors duration-500">
+                <button onClick={handleNext} className="p-3 rounded-full bg-light-text-primary/5 dark:bg-dark-text-primary/10 border border-light-text-primary/10 dark:border-dark-text-primary/20 hover:bg-light-text-primary/10 dark:hover:bg-dark-text-primary/20 transition-colors duration-500">
                     <FaArrowRight />
                 </button>
             </div>

@@ -30,14 +30,14 @@ const ContactPage = () => (
         <h2 className="text-4xl font-bold mb-4">Get In Touch</h2>
 
         {/* ✨ 1. Updated paragraph text color for both themes */}
-        <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto transition-colors duration-1000">
+        <p className="text-light-text-secondary dark:text-dark-text-secondary mb-8 max-w-2xl mx-auto transition-colors duration-1000">
             I'm currently available for freelance work and open to new opportunities. Feel free to reach out.
         </p>
 
         {/* ✨ 2. Updated email link hover color for both themes */}
         <a 
             href="mailto:yashwanthgudisena@gmail.com" 
-            className="text-2xl font-bold dark:hover:text-white hover:text-gray-700 transition-colors duration-500"
+            className="text-2xl font-bold text-light-accent dark:text-dark-accent hover:text-light-accent dark:hover:text-dark-accent transition-colors duration-500"
         >
             tyashwanth99@gmail.com
         </a>
@@ -48,7 +48,7 @@ const ContactPage = () => (
                 href="https://github.com/proxiee" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-500"
+                className="text-light-text-secondary dark:text-dark-text-secondary hover:text-light-accent dark:hover:text-dark-accent transition-colors duration-500"
             >
                 <FaGithub size={30} />
             </a>
@@ -56,13 +56,13 @@ const ContactPage = () => (
                 href="https://linkedin.com/in/yashwanthtirupati" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-500"
+                className="text-light-text-secondary dark:text-dark-text-secondary hover:text-light-accent dark:hover:text-dark-accent transition-colors duration-500"
             >
                 <FaLinkedin size={30} />
             </a>
             <a 
                 href="mailto:tyashwanth99@gmail.com" 
-                className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-500"
+                className="text-light-text-secondary dark:text-dark-text-secondary hover:text-light-accent dark:hover:text-dark-accent transition-colors duration-500"
             >
                 <FaEnvelope size={30} />
             </a>
