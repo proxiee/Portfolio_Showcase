@@ -19,7 +19,7 @@ const ProjectsPage = () => {
     const projects = [
         {
             title: "ApplyWise",
-            description: "Be it 50 applications or 500, all you have to be is lucky just once, and we have the opportunity to increase our luck by applying more. That's why I built ApplyWise. It's a tool designed to give you that power back. With ApplyWise, you can filter hundreds of recent jobs from different websites and instantly tailor the custom resumes and cover letters that get you noticed. It handles the volume and the quality, so you can focus on being ready. Login -> Provide your details -> Scrape jobs -> Get tailored Resume/CV -> Apply -> Track applications. Good Luck to us.",
+            description: "Be it 50 applications or 500, all you have to be is lucky just once, and we have the opportunity to increase our luck by applying more. That's why I built ApplyWise. It's a tool designed to give you that power back. With ApplyWise, you can filter hundreds of recent jobs from different websites and instantly tailor the custom resumes and cover letters that get you noticed. It handles the volume and the quality, so you can focus on being ready. Login -> Provide your details -> Scrape jobs -> Get tailored Resume/CV -> Apply -> Track applications. Good Luck.",
             tech: ["Flask", "PostgreSQL"],
             image: "project_pics//apply_wise.png",
             sourceCodeUrl: "https://github.com/proxiee/ApplyWise.git",
