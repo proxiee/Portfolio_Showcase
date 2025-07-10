@@ -19,7 +19,7 @@ const ProjectsPage = () => {
     const projects = [
         {
             title: "IOS Audio Transcription App",
-            description: "A production-ready iOS application that records audio in 30-second segments, transcribes them using OpenAI Whisper API with local fallback, and manages everything with SwiftData. Built to handle real-world audio challenges including interruptions, background recording, and network failures.",
+            description: "A production-ready IOS application that records audio in 30-second segments, transcribes them using OpenAI Whisper API with local fallback, and manages everything with SwiftData. Built to handle real-world audio challenges including interruptions, background recording, and network failures.",
             tech: ["XCode", "Swift"],
             image: "https://crocoapps.com/upload/resize_cache/iblock/af8/1200_630_2/preview.jpg",
             sourceCodeUrl: "https://github.com/proxiee/Twinminds-project.git",
