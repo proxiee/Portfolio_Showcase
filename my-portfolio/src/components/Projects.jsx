@@ -23,7 +23,7 @@ const ProjectsPage = () => {
             tech: ["XCode", "Swift"],
             image: "https://crocoapps.com/upload/resize_cache/iblock/af8/1200_630_2/preview.jpg",
             sourceCodeUrl: "https://github.com/proxiee/Twinminds-project.git",
-            // liveLinkUrl: "https://bc25-198-85-230-105.ngrok-free.app",
+            liveLinkUrl: "https://bc25-198-85-230-105.ngrok-free.app",
         },
         {
             title: "ApplyWise",
